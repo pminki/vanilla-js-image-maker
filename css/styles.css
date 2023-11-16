@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import "reset.css";
+
+* {
+  font-family: 'Noto Sans KR', 'Roboto', sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2fed2;
+  padding: 20px;
+  font-family: 'Noto Sans KR', 'Roboto', sans-serif;
+}
+
+canvas {
+  width: 800px;
+  height: 800px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+hr {
+  width: 92%;
+  opacity: 0.3;
+}
+
+.wrap {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: flext-start;
+}
+
+.title {
+ font-size: 60px;
+ font-weight: bold;
+ margin-bottom: 30px;
+
+ background: linear-gradient(
+    to right,
+    #7953cd 20%,
+    #00affa 30%,
+    #0190cd 70%,
+    #764ada 80%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 500% auto;
+  animation: textShine 5s ease-in-out infinite alternate;
+}
+
+@keyframes textShine {
+  0% {
+      background-position: 0% 50%;
+  }
+  100% {
+      background-position: 100% 50%;
+  }
+}
+
+.btns {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+}
+.btn-group button {
+  padding: 10px 12px;
+}
+
+.color-options {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.color-option {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid white;
+  transition: transform ease-in-out .1s;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.color-option:hover {
+  background-color: white;
+  transition: scale(1.2);
+}
+
+button,
+label {
+  all: unset;
+  padding: 10px 0px;
+  text-align: center;
+  background-color: royalblue;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: opacity linear .1s;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+/* 외부 스타일 */
+input#color {
+  width: 62px;
+  height: 62px;
+  background-color: transparent;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+/* 내부 스타일 */
+input#color::-webkit-color-swatch {
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+input#file {
+  display: none;
+}
+
+input#text,
+input#textSize {
+  all: unset;
+  padding: 10px 0px;
+  border-radius: 10px;
+  font-weight: 500;
+  text-align: center;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+input#textSize {
+  text-align: right;
+}
+
+
+input[type="radio"] {
+  display: none;
+}
+input[type="radio"] + label {
+  border: 1px solid rgb(163, 163, 163);
+  background-color: rgb(163, 163, 163);
+  cursor: pointer;
+  display: block;
+  padding: 7px 15px;
+  text-align: center;
+}
+input[type="radio"]:checked + label {
+  border: 2px solid royalblue;
+  background-color: royalblue;
+}
